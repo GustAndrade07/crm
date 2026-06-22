@@ -12,7 +12,7 @@ tarefas e analytics. Acesso para qualquer pessoa com conta.
 ## Stack
 - **Next.js 16** (App Router, Turbopack) + **React 19** + **TypeScript**
 - **Tailwind CSS 4** (tema claro/escuro por classe, tokens em `globals.css`)
-- **Supabase** (Postgres 17, Auth, RLS) — projeto `crm` (`qqnxsopedzahgxjyftkn`, região sa-east-1)
+- **Supabase** (Postgres 17, Auth, RLS) — configure seu próprio projeto e preencha o `.env.local`
 - **Recharts** (gráficos), **lucide-react** (ícones), **zod** (validação)
 
 ## Convenções Next 16 (importantes)
@@ -60,7 +60,7 @@ Este projeto usa o MCP do Supabase. Crie um `.mcp.json` na raiz (não versionar 
   "mcpServers": {
     "supabase": {
       "command": "npx",
-      "args": ["-y", "@supabase/mcp-server-supabase@latest", "--read-only", "--project-ref=qqnxsopedzahgxjyftkn"],
+      "args": ["-y", "@supabase/mcp-server-supabase@latest", "--read-only", "--project-ref=<seu-project-ref>"],
       "env": { "SUPABASE_ACCESS_TOKEN": "<seu-token>" }
     }
   }
