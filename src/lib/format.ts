@@ -39,19 +39,21 @@ export function formatDataHora(iso: string | null): string {
 /** "há 3 dias", "agora", etc. */
 export function timeAgo(iso: string): string {
   const diff = Date.now() - new Date(iso).getTime();
-  const min = Math.round(diff / 60000);
+  const min = Math.floor(diff / 60000);
   if (min < 1) return "agora";
   if (min < 60) return `há ${min} min`;
-  const h = Math.round(min / 60);
+  const h = Math.floor(min / 60);
   if (h < 24) return `há ${h}h`;
-  const d = Math.round(h / 24);
+  const d = Math.floor(h / 24);
   if (d < 30) return `há ${d}d`;
   return formatData(iso);
 }
 
 export function iniciais(nome: string | null | undefined): string {
   if (!nome) return "?";
-  const parts = nome.trim().split(/\s+/);
+  const trimmed = nome.trim();
+  if (!trimmed) return "?";
+  const parts = trimmed.split(/\s+/);
   if (parts.length === 1) return parts[0].slice(0, 2).toUpperCase();
   return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
 }

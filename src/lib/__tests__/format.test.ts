@@ -220,7 +220,7 @@ describe("iniciais", () => {
     });
 
     it("converte para maiúsculas independente do input", () => {
-      expect(iniciais("ana paula")).toBe("AA");
+      expect(iniciais("ana paula")).toBe("AP");
     });
   });
 

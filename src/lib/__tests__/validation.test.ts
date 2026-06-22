@@ -31,7 +31,7 @@ describe("clienteSchema", () => {
         email: "joao@empresa.com",
         telefone: "(11) 91234-5678",
         empresa: "Acme Tech",
-        owner_id: "00000000-0000-0000-0000-000000000001",
+        owner_id: "00000000-0000-4000-8000-000000000001",
         tags: ["vip", "indicacao"],
       });
       expect(result.success).toBe(true);
@@ -294,7 +294,7 @@ describe("tarefaSchema", () => {
       ...base,
       descricao: "Conferir proposta enviada",
       due_date: "2025-07-01",
-      responsavel_id: "00000000-0000-0000-0000-000000000002",
+      responsavel_id: "00000000-0000-4000-8000-000000000002",
     });
     expect(result.success).toBe(true);
   });
